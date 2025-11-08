@@ -1,0 +1,44 @@
+@use 'sass:map';
+@use '../../custom-theme.scss' as theme;
+
+footer {
+    background-color: theme.color(primary, 10);
+    height: 32rem;
+    margin: 0;
+    //padding: 0rem 6rem;
+
+    .text-footer {
+        font-family: "IBM Plex Sans";
+        font-style: bold;
+        font-size: 7rem;
+        font-weight: 900;
+        line-height: 100%;
+        text-transform: capitalize;
+        text-align: start;
+        color: theme.color(tertiary, 70);
+        margin: 0;
+        padding: 1rem 0rem 0rem 6rem;
+    }
+
+    .footer-links a {
+        color: theme.color(primary, 100);
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0rem 0rem 0rem 6rem;
+    }
+
+    .contacto {
+        margin-bottom: 6rem;
+    }
+
+    span {
+        color: theme.color(primary, 100);
+        padding: 0rem 0rem 0rem 6rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: theme.color(primary, 10);
+    }
+}

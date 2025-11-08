@@ -1,0 +1,235 @@
+@use 'sass:map';
+@use '../../custom-theme.scss' as theme;
+
+.section-presentation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 6rem 0rem 0rem;
+    max-height: 37.6rem;
+    max-width: 90rem;
+    gap: 6rem;
+    background-color: theme.color(primary, 100);
+
+    .div-presentation {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .presentation-style {
+        font-family: 'IBM Plex Sans';
+        font-style: bold;
+        font-size: 7rem;
+        font-weight: 700;
+        line-height: 120%;
+        text-transform: capitalize;
+        color: theme.color(secondary, 10);
+        letter-spacing: 0;
+        vertical-align: middle;
+        margin: 0;
+        max-width: 50rem;
+    }
+
+    H6 {
+        font-family: 'Source Sans 3';
+        font-size: 2rem;
+        font-weight: 700;
+        font-style: bold;
+        max-width: 50rem;
+        color: theme.color(primary, 10);
+        margin: 0;
+    }
+
+    .presentation-button {
+        margin-top: 2rem;
+    }
+
+}
+
+.section-description {
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem 6rem;
+  background-color: theme.color(primary, 95);
+  max-width: 90rem;
+
+  .div-description {
+    max-width: 38.25rem;
+    padding: 0rem 6rem 0rem 0rem;
+  }
+
+   h2 {
+    margin: 0;
+   }
+
+  p {
+    font-family: 'Source Sans 3';
+    font-size: 1.75rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 130%;
+    letter-spacing: 0;
+    margin: 0 auto;
+    color: theme.color(primary, 10);
+  }
+
+ 
+          .paragraph-italy {
+              font-family: 'Source Sans 3';
+              font-style: italic;
+              font-size: 20px;
+              font-weight: 400;
+              letter-spacing: 0.4px;
+              margin-top: 2rem;
+              text-decoration: none;
+              color: theme.color(primary, 10);
+              
+    
+              &:hover {
+                  background-color: theme.color(tertiary, 95);
+                  padding: 0 .6rem;
+              }
+          }
+}
+
+.section-project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: theme.color(primary, 100);
+
+        h2 {
+        align-self: flex-start;
+        padding-left: 6rem;
+    }
+}
+
+.section-services {
+    background-color: theme.color(primary, 95);
+    padding: 0rem 6rem;
+
+    h2 {
+        align-self: flex-start;
+        margin-bottom: 1rem;
+    }
+    .paragraph-service {
+        font-family: 'Source Sans 3';
+        font-size: 1.75rem;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 130%;
+        letter-spacing: 0;
+        margin: 0 auto;
+        color: theme.color(primary, 10);
+        padding-bottom: 0rem 0rem 2rem 6rem;
+    }
+    .div-panel-description {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    mat-expansion-panel {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+
+        mat-expansion-panel-header {
+            background-color: transparent !important;
+            border-bottom: 1px solid theme.color(tertiary, 70) !important;
+            margin: 1.25rem 0 !important;
+            justify-content: center !important;
+        }
+
+        &:hover, &:focus {
+            background-color: transparent !important;
+        }   
+
+        mat-panel-title {
+            font-family: 'Source Sans 3';
+            font-size: 2rem;
+            font-weight: 700;
+            font-style: bold;
+            color: theme.color(secondary, 10);
+            line-height: 130%;
+            letter-spacing: 0;
+            vertical-align: middle;
+        }
+
+        mat-panel-description {
+            font-family: 'Source Sans 3';
+            font-size: 1.75rem;
+            font-weight: 400;
+            font-style: normal;
+            color: theme.color(primary, 10);
+            line-height: 130%;
+            letter-spacing: 0;
+            vertical-align: middle;
+        }
+    }
+
+.example-action-buttons {
+    padding-bottom: 20px;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+    justify-content: flex-end;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.example-headers-align .mat-mdc-form-field+.mat-mdc-form-field {
+    margin-left: 8px;
+}
+}
+
+.section-stories {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 6rem;
+    max-height: 44.25rem;
+    background-color: theme.color(primary, 100);
+
+    .stories-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .story-card {
+        max-width: 38.25rem;
+    }
+}
+
+.section-invitation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40.8rem;
+    background-color: theme.color(tertiary, 70);
+
+    .container-invitation {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        background-color: theme.color(primary, 100);
+        padding: 3.75rem 1.5rem;
+        border-radius: 40px;
+        max-width: 51.5rem;
+    }
+
+    p {
+        font-family: 'Source Sans 3';
+        font-size: 1.75rem;
+        font-weight: 400;
+        font-style: normal;
+        color: theme.color(primary, 10);
+        line-height: 130%;
+        text-align: center;
+    }
+}
+

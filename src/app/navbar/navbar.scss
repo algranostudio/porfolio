@@ -1,0 +1,31 @@
+@use 'sass:map';
+@use '../../custom-theme.scss' as theme;
+
+.nav-style {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: theme.color(primary, 100);
+    max-width: 90rem;
+    padding: 1rem 6rem;
+
+    img {
+        display: flex;
+        align-items: center;
+    }
+
+    a {
+        font-family: 'Source Sans 3';
+        text-decoration: none;
+        color: theme.color(primary, 10);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+    }
+
+    .center-nav {
+        display: flex;
+        gap: 2.9rem;
+    }
+}

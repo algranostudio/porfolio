@@ -1,0 +1,64 @@
+<section
+  class="projects-container"
+  #scrollContainer
+  (mousemove)="onMouseMove($event)"
+  (mouseenter)="showCursor()"
+  (mouseleave)="hideCursor()"
+>
+      <button class="arrow left" (click)="scroll('left')">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <button class="arrow right" (click)="scroll('right')">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+  
+  <div class="custom-cursor" #cursor>learn more</div>
+
+  <div class="project-education" routerLink="/project-education">
+    <div class="card-style">
+      <div class="content-img-education">
+        <label>Educación</label>
+      </div>
+      <div class="content-text">
+        <h3>UI/UX Design</h3>
+        <span>Optimizando la experiencia de docentes y coordinadores</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-finance" routerLink="/project-finance">
+    <div class="card-style">
+      <div class="content-img-finance">
+        <label>Finanza</label>
+      </div>
+      <div class="content-text">
+        <h3>UI/UX Design</h3>
+        <span>Rediseño del sitio web de Nikko Asset Management</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-hospitality" routerLink="/project-hospitality">
+    <div class="card-style">
+      <div class="content-img-hospitality">
+        <label>Hospitalidad</label>
+      </div>
+      <div class="content-text">
+        <h3>UI/UX Design</h3>
+        <span>Simplificar y mejorar la legibilidad del menú de impresión</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-ecommerce" routerLink="/project-ecommerce">
+    <div class="card-style">
+      <div class="content-img-ecommerce">
+        <label>E-commerce</label>
+      </div>
+      <div class="content-text">
+        <h3>UI/UX Design</h3>
+        <span>Transformando la experiencia de compra para hacerla más clara, confiable y humana.</span>
+      </div>
+    </div>
+  </div>
+</section>
