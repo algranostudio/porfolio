@@ -1,37 +1,89 @@
-<section class="home">
+<section>
     <app-navbar></app-navbar>
     <main>
         <section class="section-presentation">
-            <img src="/images/logo/hero.jpg" alt="Hero" width="602px" height="602px">
+            <img src="/images/logo/hero_602px.jpg" alt="Hero" width="602px" height="602px">
             <div class="div-presentation">
-            <h1 class="presentation-style">AL GRANO STUDIO</h1>
-            <H6>Transformamos la experiencia de tus clientes en resultados reales para tu negocio</H6>
-            <button routerLink="/contact"  class="presentation-button">
-                Transforma tu negocio</button>
+                <h1 class="presentation-style">AL GRANO STUDIO</h1>
+                <H6>Transformamos la experiencia de tus clientes en resultados reales para tu negocio</H6>
+                <button routerLink="/contact" class="button-style-global presentation-button">
+                    Transforma tu negocio</button>
             </div>
         </section>
-        <section class="background-description">
-        <div class="section-description">
-            <h2> ¿Qué es UX? </h2>
-            <div class="div-description">
-            <p>En Al Grano Studio diseñamos sitios web que no solo se ven bien, sino que también funcionan bien.
-                UX (Experiencia de Usuario) significa crear experiencias digitales claras, útiles y agradables,
-                que convierten visitas en clientes.
-            </p><br>
-            <p>Una buena UX mejora las ventas, refuerza la confianza, ahorra tiempo y dinero. Por cada 1 € invertido
-                en UX, puedes obtener hasta 100 € de retorno. No pierdas oportunidades por una web confusa: convierte tu
-                presencia digital en tu mejor aliada.</p>
-                <a href="/contact" class="paragraph-italy">Descubre cómo aplicamos UX en tu negocio</a>
+        <div class="background-description">
+            <section class="section-description">
+                <h2> ¿Qué es UX? </h2>
+                <div class="div-description">
+                    <p>En Al Grano Studio diseñamos sitios web que no solo se ven bien, sino que también funcionan bien.
+                        UX (Experiencia de Usuario) significa crear experiencias digitales claras, útiles y agradables,
+                        que convierten visitas en clientes.
+                    </p><br>
+                    <p>Una buena UX mejora las ventas, refuerza la confianza, ahorra tiempo y dinero. Por cada 1 €
+                        invertido
+                        en UX, puedes obtener hasta 100 € de retorno. No pierdas oportunidades por una web confusa:
+                        convierte tu
+                        presencia digital en tu mejor aliada.</p>
+                    <a href="/contact" class="paragraph-italy">Descubre cómo aplicamos UX en tu negocio</a>
                 </div>
+            </section>
+        </div>
+        <section class="projects-container" #scrollContainer (mousemove)="onMouseMove($event)"
+            (mouseenter)="showCursor()" (mouseleave)="hideCursor()">
+            <button class="arrow left" (click)="scroll('left')">
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+            <button class="arrow right" (click)="scroll('right')">
+                <mat-icon>chevron_right</mat-icon>
+            </button>
+            <div class="project-education" routerLink="/project-education">
+                <div class="card-style">
+                    <div class="content-img-education">
+                        <label>Educación</label>
+                    </div>
+                    <div class="content-text">
+                        <h3>UI/UX Design</h3>
+                        <span>Optimizando la experiencia de docentes y coordinadores</span>
+                    </div>
                 </div>
-        </section>
-        <section class="section-project">
-            <h2>Proyectos</h2>
-            <app-projects></app-projects>
+            </div>
+            <div class="project-finance" routerLink="/project-finance">
+                <div class="card-style">
+                    <div class="content-img-finance">
+                        <label>Finanza</label>
+                    </div>
+                    <div class="content-text">
+                        <h3>UI/UX Design</h3>
+                        <span>Rediseño del sitio web de Nikko Asset Management</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-hospitality" routerLink="/project-hospitality">
+                <div class="card-style">
+                    <div class="content-img-hospitality">
+                        <label>Hospitalidad</label>
+                    </div>
+                    <div class="content-text">
+                        <h3>UI/UX Design</h3>
+                        <span>Simplificar y mejorar la legibilidad del menú de impresión</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-ecommerce" routerLink="/project-ecommerce">
+                <div class="card-style">
+                    <div class="content-img-ecommerce">
+                        <label>E-commerce</label>
+                    </div>
+                    <div class="content-text">
+                        <h3>UI/UX Design</h3>
+                        <span>Transformando la experiencia de compra, más clara, confiable y humana.</span>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="services" class="section-services">
             <h2>Servicios</h2>
-            <p class="paragraph-service">Transforma desafíos en crecimiento con soluciones enfocadas en UX que generan un impacto real en tu negocio.</p>
+            <p class="paragraph-service">Transforma desafíos en crecimiento con soluciones enfocadas en UX que generan
+                un impacto real en tu negocio.</p>
             <mat-accordion class="example-headers-align" multi>
                 <mat-expansion-panel hideToggle>
                     <mat-expansion-panel-header>
@@ -51,7 +103,8 @@
                                 <li>Pruebas de Usabilidad</li>
                                 <li>Design System</li>
                             </ul>
-                            <button routerLink="/contact" class="button-secondary">Veamos tu caso</button>
+                            <button routerLink="/contact" class="button-style-global button-secondary">Veamos tu
+                                caso</button>
                         </div>
                     </div>
                 </mat-expansion-panel>
@@ -66,13 +119,15 @@
                     <div class="div-panel-description">
                         <span>Overview</span>
                         <div>
-                            <p>Identifica oportunidades ocultas y corrige puntos de fricción para obtener resultados rápidos.</p>
+                            <p>Identifica oportunidades ocultas y corrige puntos de fricción para obtener resultados
+                                rápidos.</p>
                             <ul>
                                 <li>Auditoría de Sitios Web y Aplicaciones</li>
                                 <li>Auditoría de Procesos Presenciales</li>
                                 <li>Auditoría de Accesibilidad</li>
                             </ul>
-                            <button routerLink="/contact" class="button-secondary">Veamos tu caso</button>
+                            <button routerLink="/contact" class="button-style-global button-secondary">Veamos tu
+                                caso</button>
                         </div>
                     </div>
                 </mat-expansion-panel>
@@ -94,7 +149,8 @@
                                 <li>Heuristic Evaluation Workshop (Taller de Evaluación Heurística)</li>
                                 <li>Figma Prototyping Workshop (Taller de Prototipado en Figma)</li>
                             </ul>
-                            <button routerLink="/contact" class="button-secondary">Veamos tu caso</button>
+                            <button routerLink="/contact" class="button-style-global button-secondary">Veamos tu
+                                caso</button>
                         </div>
                     </div>
                 </mat-expansion-panel>
@@ -115,7 +171,8 @@
                                 <li>Soporte Estratégico Continuo</li>
                                 <li>Desarrollo de Talento Interno</li>
                             </ul>
-                            <button routerLink="/contact" class="button-secondary">Veamos tu caso</button>
+                            <button routerLink="/contact" class="button-style-global button-secondary">Veamos tu
+                                caso</button>
                         </div>
                     </div>
                 </mat-expansion-panel>
@@ -123,22 +180,24 @@
         </section>
         <section class="section-stories">
             <div class="stories-container">
-            <div class="story-card">
-            <h2>Casos de éxitos</h2>
-            <p>Experiencias que demuestran cómo impulsamos su éxito</p>
+                <div class="story-card">
+                    <h2>Casos de éxitos</h2>
+                    <p>Experiencias que demuestran cómo impulsamos su éxito</p>
+                </div>
+                <div class="story-card">
+                    <span>Buscar slide</span>
+                    <p>El nuevo panel se ve mucho mejor y es mucho más fácil encontrar lo que necesito. <br> Ahora puedo
+                        dedicar menos tiempo a tareas administrativas y más tiempo con las actividades de mis alumnos.
+                    </p>
+                </div>
             </div>
-            <div class="story-card">
-                <span>Buscar slide</span>
-                <p>El nuevo panel se ve mucho mejor y es mucho más fácil encontrar lo que necesito. <br> Ahora puedo dedicar menos tiempo a tareas administrativas y más tiempo con las actividades de mis alumnos.</p>
-            </div>
-            </div>
-            <button routerLink="/contact">Sé nuestro próximo caso de éxito</button>
+            <button routerLink="/contact" class="button-style-global">Sé nuestro próximo caso de éxito</button>
         </section>
         <section class="section-invitation">
             <div class="container-invitation">
-            <h2>¿Listo para transformar la experiencia de tus usuarios?</h2>
-            <p>Creamos experiencias de usuario atractivas que impulsan el crecimiento real de tu producto.</p>
-            <button routerLink="/contact">Agenda tu sesión</button>
+                <h2>¿Listo para transformar la experiencia de tus usuarios?</h2>
+                <p>Creamos experiencias de usuario atractivas que impulsan el crecimiento real de tu producto.</p>
+                <button routerLink="/contact" class="button-style-global">Agenda tu sesión</button>
             </div>
         </section>
     </main>

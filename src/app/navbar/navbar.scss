@@ -6,8 +6,8 @@
     justify-content: space-between;
     align-items: center;
     background-color: theme.color(primary, 100);
-    max-width: 90rem;
-    padding: 1rem 6rem;
+    padding: 1rem 1.5rem;
+    position: relative; // necesario para centrar el botón en mobile
 
     img {
         display: flex;
@@ -24,8 +24,70 @@
         line-height: 130%;
     }
 
+    /* CENTER NAV — En mobile se ocultan los links */
     .center-nav {
         display: flex;
         gap: 2.9rem;
+
+        a {
+            display: none; // ocultar navegación en mobile
+        }
+    }
+
+    /* MENU HAMBURGUESA — visible en mobile */
+    .menu-style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* RIGHT NAV — botón centrado en mobile */
+    .right-nav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        button {
+            display: block;
+        }
+    }
+}
+
+/* ─────────────────────────────────────────── */
+/* TABLET (>=48rem)                            */
+/* ─────────────────────────────────────────── */
+@media (min-width: 48rem) {
+    .nav-style {
+        padding: 1rem 3rem;
+        position: static; // restablecer
+        justify-content: space-between;
+
+        .center-nav {
+            a {
+                display: inline-block; // mostrar navegación
+            }
+        }
+
+        .menu-style {
+            display: none; // ocultar hamburguesa
+        }
+
+        .right-nav {
+            position: static;
+            transform: none;
+        }
+    }
+}
+
+/* ─────────────────────────────────────────── */
+/* DESKTOP (>=90rem)                           */
+/* ─────────────────────────────────────────── */
+@media (min-width: 90rem) {
+    .nav-style {
+        padding: 1rem 12rem;
+
+        .center-nav {
+            gap: 3.5rem;
+        }
     }
 }

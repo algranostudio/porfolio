@@ -35,13 +35,12 @@ body { margin: 0; font-family: 'IBM Plex Sans', 'Source Sans 3'; }
     display: grid;
     justify-content: center;
     align-content: center;
-    min-height: 100vh;
+    min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
-    margin: 0 auto;
     background-color: theme.color(primary, 100);
   }
 
-button {
+.button-style-global {
     display: flex;
     align-items: center;
     border-radius: 50px;
@@ -72,20 +71,6 @@ H2 {
     color: theme.color(secondary, 10);
 }
 
-@media (width >= 20rem) {
-  body {
-    //background: pink;
-  }
-
-  @media (width >= 48rem) {
-    body {
-      //background: red;
-    }
-  }
-
-  @media (width >= 90rem) {
-    body {
-      //background: orange;
-    }
-  }
+.background-description {
+  background-color: theme.color(primary, 95);
 }

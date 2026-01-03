@@ -1,0 +1,80 @@
+@use 'sass:map';
+@use '../../../custom-theme.scss' as theme;
+
+
+h1 {
+    color: theme.color(tertiary, 70);
+    font-family: "IBM Plex Sans";
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: capitalize;
+}
+
+h3 {
+    color: theme.color(rpimary, 10);
+/* Al grano/Desktop/H3 */
+font-family: "Source Sans 3";
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: 130%; /* 41.6px */
+}
+
+article {
+    //color: var(--Support, #AAA);
+
+/* Al grano/Desktop/P4 */
+font-family: "Source Sans 3";
+font-size: 20px;
+font-style: italic;
+font-weight: 400;
+line-height: 130%; /* 26px */
+letter-spacing: 0.4px;
+}
+
+p {
+    //color: var(--Primary, #212121);
+
+/* Al grano/Desktop/P1 */
+font-family: "Source Sans 3";
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: 130%; /* 36.4px */
+}
+
+label {
+    //label desafio
+   // color: var(--Accent-1, #0A1F44);
+
+/* Al grano/Desktop/P4 */
+font-family: "Source Sans 3";
+font-size: 20px;
+font-style: italic;
+font-weight: 400;
+line-height: 130%; /* 26px */
+letter-spacing: 0.4px;
+}
+
+// todos los h2 son iguales
+h2 {
+    //color: var(--Accent-1, #0A1F44);
+
+/* Al grano/Desktop/H2 */
+font-family: "IBM Plex Sans";
+font-size: 56px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 67.2px */
+text-transform: uppercase;
+}
+
+.container-article + ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+

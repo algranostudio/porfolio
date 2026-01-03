@@ -1,13 +1,42 @@
-    <nav id="navbar" class="nav-style">
-        <div class="left-nav">
-            <a href="#"><img src="/images/logo/logo.png" alt="Logo" width="32px" height="auto"></a>
+<nav id="navbar" class="nav-style">
+    <div class="left-nav">
+        @if (isVisible) {
+        <picture>
+            <source media="(min-width: 22.5rem)" srcset="/images/logo/logo_24px.png" />
+            <img src="/images/logo/logo_24px.png" alt="Logo">
+        </picture>
+        } @else {
+        <picture>
+            <source media="(min-width: 48rem)" srcset="/images/logo/logo_32px.png" />
+            <img src="/images/logo/logo_32px.png" alt="Logo">
+        </picture>
+        }
+    </div>
+    <div class="center-nav">
+        <a href="#navbar">Inicio</a>
+        <a href="#services">Servicios</a>
+        <a routerLink="/contact">Contacto</a>
+        <div class="menu-style">
+            <button matIconButton [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <img src="/images/logo/logo_14px.png" alt="Logo">
+                    <a href="#navbar">Inicio</a>
+                </button>
+                <button mat-menu-item>
+                    <img src="/images/logo/logo_14px.png" alt="Logo">
+                    <a href="#services">Servicios</a>
+                </button>
+                <button mat-menu-item>
+                    <img src="/images/logo/logo_14px.png" alt="Logo">
+                    <a routerLink="/contact">Contacto</a>
+                </button>
+            </mat-menu>
         </div>
-        <div class="center-nav">
-            <a href="#navbar">Inicio</a>
-            <a href="#services">Servicios</a>
-            <a routerLink="/contact">Contacto</a>
-        </div>
-        <div class="right-nav">
-            <button routerLink="/contact" class="button-primary">Consulta Gratuita</button>
-        </div>
-    </nav>
+    </div>
+    <div class="right-nav">
+        <button routerLink="/contact" class="button-style-global button-primary">Consulta Gratuita</button>
+    </div>
+</nav>

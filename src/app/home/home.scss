@@ -1,235 +1,515 @@
 @use 'sass:map';
 @use '../../custom-theme.scss' as theme;
 
+// -----------------------------------------------------
+// TIPOGRAFÍA RESPONSIVA (Global)
+// -----------------------------------------------------
+
+// Titulares
+$fs-h1: clamp(2.4rem, 4vw + 1rem, 7rem);
+$fs-h2: clamp(1.8rem, 1.6vw + 1rem, 3.5rem);
+$fs-h6: clamp(1.2rem, 0.8vw + 0.8rem, 2rem);
+
+// Texto general
+$fs-body: clamp(1rem, 1vw + 0.5rem, 1.75rem);
+$fs-small: clamp(0.9rem, 0.8vw, 1.25rem);
+$fs-paragraph-service: clamp(1.2rem, 1.1vw + 0.5rem, 1.75rem);
+
+// Paneles UX
+$fs-panel-title: clamp(1.4rem, 1.2vw + 0.5rem, 2rem);
+$fs-panel-description: clamp(1.2rem, 1vw + 0.5rem, 1.75rem);
+
+
+// -----------------------------------------------------
+// SECCIÓN PRESENTATION
+// -----------------------------------------------------
+
 .section-presentation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 12rem;
+  max-height: 37.6rem;
+  gap: 6rem;
+  background-color: theme.color(primary, 100);
+
+  .div-presentation {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0rem 6rem 0rem 0rem;
-    max-height: 37.6rem;
-    max-width: 90rem;
-    gap: 6rem;
-    background-color: theme.color(primary, 100);
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+
+  .presentation-style {
+    font-family: 'IBM Plex Sans';
+    font-style: bold;
+    font-size: $fs-h1;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: capitalize;
+    color: theme.color(secondary, 10);
+    margin: 0;
+    max-width: 50rem;
+  }
+
+  h6 {
+    font-family: 'Source Sans 3';
+    font-size: $fs-h6;
+    font-weight: 700;
+    font-style: bold;
+    max-width: 50rem;
+    color: theme.color(primary, 10);
+    margin: 0;
+  }
+
+  .presentation-button {
+    margin-top: 2rem;
+  }
+
+  @media (width <=48rem) {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+    max-height: none;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
 
     .div-presentation {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
+      align-items: center;
+      padding-bottom: 4rem;
     }
 
     .presentation-style {
-        font-family: 'IBM Plex Sans';
-        font-style: bold;
-        font-size: 7rem;
-        font-weight: 700;
-        line-height: 120%;
-        text-transform: capitalize;
-        color: theme.color(secondary, 10);
-        letter-spacing: 0;
-        vertical-align: middle;
-        margin: 0;
-        max-width: 50rem;
+      max-width: 100%;
     }
 
-    H6 {
-        font-family: 'Source Sans 3';
-        font-size: 2rem;
-        font-weight: 700;
-        font-style: bold;
-        max-width: 50rem;
-        color: theme.color(primary, 10);
-        margin: 0;
+    h6 {
+      max-width: 100%;
     }
+  }
 
-    .presentation-button {
-        margin-top: 2rem;
-    }
+  @media (width >=48rem) and (width < 90rem) {
+    flex-direction: column;
+    padding: 0 4rem;
+  }
 
+  @media (width >=90rem) {
+    flex-direction: row;
+  }
 }
+
+
+// -----------------------------------------------------
+// SECCIÓN DESCRIPTION
+// -----------------------------------------------------
 
 .section-description {
   display: flex;
   justify-content: space-between;
-  padding: 5rem 6rem;
-  background-color: theme.color(primary, 95);
-  max-width: 90rem;
+  padding: 5rem 12rem;
+  box-sizing: border-box;
 
-  .div-description {
-    max-width: 38.25rem;
-    padding: 0rem 6rem 0rem 0rem;
+  h2 {
+    margin: 0;
+    font-size: $fs-h2;
   }
 
-   h2 {
-    margin: 0;
-   }
+  .div-description {
+    width: 100%;
+    max-width: 38.25rem;
+    padding: 0rem 6rem 0rem 0rem;
+    box-sizing: border-box;
+  }
 
   p {
     font-family: 'Source Sans 3';
-    font-size: 1.75rem;
+    font-size: $fs-body;
     font-weight: 400;
-    font-style: normal;
     line-height: 130%;
-    letter-spacing: 0;
     margin: 0 auto;
     color: theme.color(primary, 10);
   }
 
- 
-          .paragraph-italy {
-              font-family: 'Source Sans 3';
-              font-style: italic;
-              font-size: 20px;
-              font-weight: 400;
-              letter-spacing: 0.4px;
-              margin-top: 2rem;
-              text-decoration: none;
-              color: theme.color(primary, 10);
-              
-    
-              &:hover {
-                  background-color: theme.color(tertiary, 95);
-                  padding: 0 .6rem;
-              }
-          }
-}
+  .paragraph-italy {
+    font-family: 'Source Sans 3';
+    font-style: italic;
+    font-size: $fs-small;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    margin-top: 2rem;
+    color: theme.color(primary, 10);
 
-.section-project {
-    display: flex;
+    &:hover {
+      background-color: theme.color(tertiary, 95);
+      padding: 0 .6rem;
+    }
+  }
+
+  @media (max-width: 48rem) {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem;
-    background-color: theme.color(primary, 100);
+    padding: 2rem;
 
-        h2 {
-        align-self: flex-start;
-        padding-left: 6rem;
-    }
-}
-
-.section-services {
-    background-color: theme.color(primary, 95);
-    padding: 0rem 6rem;
-
-    h2 {
-        align-self: flex-start;
-        margin-bottom: 1rem;
-    }
-    .paragraph-service {
-        font-family: 'Source Sans 3';
-        font-size: 1.75rem;
-        font-weight: 400;
-        font-style: normal;
-        line-height: 130%;
-        letter-spacing: 0;
-        margin: 0 auto;
-        color: theme.color(primary, 10);
-        padding-bottom: 0rem 0rem 2rem 6rem;
-    }
-    .div-panel-description {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    mat-expansion-panel {
-        background-color: transparent !important;
-        box-shadow: none !important;
-        border-radius: 0 !important;
-
-        mat-expansion-panel-header {
-            background-color: transparent !important;
-            border-bottom: 1px solid theme.color(tertiary, 70) !important;
-            margin: 1.25rem 0 !important;
-            justify-content: center !important;
-        }
-
-        &:hover, &:focus {
-            background-color: transparent !important;
-        }   
-
-        mat-panel-title {
-            font-family: 'Source Sans 3';
-            font-size: 2rem;
-            font-weight: 700;
-            font-style: bold;
-            color: theme.color(secondary, 10);
-            line-height: 130%;
-            letter-spacing: 0;
-            vertical-align: middle;
-        }
-
-        mat-panel-description {
-            font-family: 'Source Sans 3';
-            font-size: 1.75rem;
-            font-weight: 400;
-            font-style: normal;
-            color: theme.color(primary, 10);
-            line-height: 130%;
-            letter-spacing: 0;
-            vertical-align: middle;
-        }
-    }
-
-.example-action-buttons {
-    padding-bottom: 20px;
-}
-
-.example-headers-align .mat-expansion-panel-header-description {
-    justify-content: flex-end;
-    gap: 0.8rem;
-    align-items: center;
-}
-
-.example-headers-align .mat-mdc-form-field+.mat-mdc-form-field {
-    margin-left: 8px;
-}
-}
-
-.section-stories {
-    display: flex;
-    flex-direction: column;
-    padding: 6rem 6rem;
-    max-height: 44.25rem;
-    background-color: theme.color(primary, 100);
-
-    .stories-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .story-card {
-        max-width: 38.25rem;
-    }
-}
-
-.section-invitation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40.8rem;
-    background-color: theme.color(tertiary, 70);
-
-    .container-invitation {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        flex-direction: column;
-        background-color: theme.color(primary, 100);
-        padding: 3.75rem 1.5rem;
-        border-radius: 40px;
-        max-width: 51.5rem;
+    .div-description {
+      max-width: 100%;
+      padding: 0;
     }
 
     p {
-        font-family: 'Source Sans 3';
-        font-size: 1.75rem;
-        font-weight: 400;
-        font-style: normal;
-        color: theme.color(primary, 10);
-        line-height: 130%;
-        text-align: center;
+      text-align: center;
+      margin: 1rem 0;
     }
+
+    h2 {
+      text-align: center;
+    }
+
+    .paragraph-italy {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 48rem) and (max-width: 90rem) {
+    flex-direction: column;
+    padding: 4rem;
+
+    .div-description {
+      max-width: 90%;
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    p,
+    h2,
+    .paragraph-italy {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 90rem) {
+    flex-direction: row;
+
+    .div-description {
+      max-width: 38.25rem;
+      padding-right: 6rem;
+      margin: 0;
+    }
+  }
 }
 
+
+// -----------------------------------------------------
+// SECCIÓN PROJECTS
+// -----------------------------------------------------
+
+.projects-container {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem 6rem;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  cursor: pointer;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ---- cards ---- */
+
+.project-education,
+.project-finance,
+.project-hospitality,
+.project-ecommerce {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.card-style {
+  width: 25rem;
+  height: 21rem;
+  overflow: hidden;
+  background: theme.color(primary, 100);
+
+
+  label {
+    display: inline-block;
+    font-family: 'Source Sans 3';
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-style: italic;
+    color: theme.color(secondary, 10);
+    background-color: theme.color(tertiary, 70);
+    padding: 0 1rem;
+    margin-top: 0.75rem;
+    margin-left: 0.75rem;
+  }
+}
+
+/* ---- imágenes que no se veían ---- */
+
+.content-img-education {
+  background-image: url('/images/img_projects/REX_1.jpg');
+}
+
+.content-img-finance {
+  background-image: url('/images/img_projects/NIKKO_AM2.jpg');
+}
+
+.content-img-hospitality {
+  background-image: url('/images/img_projects/Pan_De_Queso_3.jpg');
+}
+
+.content-img-ecommerce {
+  background-image: url('/images/img_projects/Baby_Boom_4.jpg');
+}
+
+.content-img-education,
+.content-img-finance,
+.content-img-hospitality,
+.content-img-ecommerce {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.3rem;
+
+  width: 100%;
+  height: 14.07rem;
+}
+
+/* ---- TEXTOS ---- */
+
+.content-text {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.content-text h3 {
+  font-family: 'IBM Plex Sans';
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 0;
+  color: theme.color(primary, 0);
+}
+
+.content-text span {
+  font-family: 'Source Sans 3';
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: theme.color(secondary, 0);
+}
+
+
+/* ---- arrows ---- */
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: none;
+
+  display: grid;
+  place-items: center;
+
+  background: theme.color(primary, 100);
+  cursor: pointer;
+}
+
+.arrow.left {
+  left: 2rem;
+  color: theme.color(tertiary, 70);
+}
+
+.arrow.right {
+  right: 2rem;
+  color: theme.color(tertiary, 70);
+}
+
+/* ---- tablet ---- */
+
+@media (max-width: 1024px) {
+  .projects-container {
+    padding: 2rem 4rem;
+    cursor: default;
+  }
+
+  .card-style {
+    width: 25rem;
+  }
+}
+
+/* ---- mobile ---- */
+
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+    overflow-x: auto;
+  }
+
+  .card-style {
+    width: 21rem;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+// -----------------------------------------------------
+// SECCIÓN SERVICES
+// -----------------------------------------------------
+
+.section-services {
+  background-color: theme.color(primary, 95);
+  padding: 12rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
+
+  h2 {
+    font-size: $fs-h2;
+    margin-bottom: 1rem;
+  }
+
+  .paragraph-service {
+    font-size: $fs-paragraph-service;
+    line-height: 130%;
+    margin-bottom: 2rem;
+    color: theme.color(primary, 10);
+    max-width: 50rem;
+  }
+
+  // -----------------------------
+  // OVERRIDE ANGULAR MATERIAL
+  // -----------------------------
+  mat-expansion-panel {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    mat-expansion-panel-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 1rem 0;
+      border-bottom: 1px solid theme.color(tertiary, 70);
+    }
+
+    mat-panel-title {
+      font-size: $fs-panel-title !important;
+      font-weight: 700;
+      color: theme.color(secondary, 10);
+    }
+
+    mat-panel-description {
+      font-size: $fs-panel-description !important;
+      color: theme.color(primary, 10);
+      display: flex;
+      gap: .4rem;
+      align-items: center;
+    }
+  }
+
+  .div-panel-description {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+
+    p {
+      font-size: $fs-body;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// -----------------------------------------------------
+// SECCIÓN STORIES
+// -----------------------------------------------------
+
+.section-stories {
+  padding: 6rem;
+  background-color: theme.color(primary, 100);
+  margin-inline: auto;
+
+  .stories-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .story-card {
+    max-width: 38rem;
+  }
+
+  h2 {
+    font-size: $fs-h2;
+  }
+
+  p {
+    font-size: $fs-body;
+  }
+
+  @media (max-width: 48rem) {
+    padding: 2rem;
+
+    .stories-container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .story-card {
+      max-width: 100%;
+    }
+  }
+}
+
+// -----------------------------------------------------
+// SECCIÓN INVITATION
+// -----------------------------------------------------
+
+.section-invitation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 12rem;
+  background-color: theme.color(tertiary, 70);
+
+  @media (max-width: 768px) {
+    padding: 2rem; // o 1.5rem, lo que prefieras
+  }
+
+  .container-invitation {
+    background-color: theme.color(primary, 100);
+    padding: 3rem 2rem;
+    border-radius: 40px;
+    max-width: 52rem;
+    text-align: center;
+
+    h2 {
+      font-size: $fs-h2;
+    }
+
+    p {
+      font-size: $fs-body;
+      color: theme.color(primary, 10);
+      line-height: 130%;
+    }
+  }
+}
