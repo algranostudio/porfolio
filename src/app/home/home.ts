@@ -6,8 +6,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
-import { Footer } from '../footer/footer';
-import { Navbar } from '../navbar/navbar';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -20,8 +18,6 @@ import { RouterModule } from '@angular/router';
              MatButtonModule,
              MatInputModule,
              MatNativeDateModule,
-             Footer,
-             Navbar,
              RouterModule
   ],
   templateUrl: './home.html',

@@ -5,10 +5,7 @@ import { MatDivider } from '@angular/material/divider';
 
 @Component({
   selector: 'app-legal',
-  imports: [ Navbar,
-             Footer,
-             MatDivider
-  ],
+  imports: [ MatDivider ],
   templateUrl: './legal.html',
   styleUrl: './legal.scss'
 })
