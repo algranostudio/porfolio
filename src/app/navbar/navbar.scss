@@ -9,6 +9,10 @@
     padding: 1rem 1.5rem;
     position: relative; // necesario para centrar el botón en mobile
 
+    picture {
+        cursor: pointer;
+    }
+
     img {
         display: flex;
         align-items: center;

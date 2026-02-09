@@ -28,7 +28,7 @@ body {
   margin: 0;
 }
 
-html, body { height: 100%; }
+html, body { height: 100%;}
 body { margin: 0; font-family: 'IBM Plex Sans', 'Source Sans 3'; }
 
 .home {
@@ -38,7 +38,7 @@ body { margin: 0; font-family: 'IBM Plex Sans', 'Source Sans 3'; }
     min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
     background-color: theme.color(primary, 100);
-  }
+}
 
 .button-style-global {
     display: flex;
