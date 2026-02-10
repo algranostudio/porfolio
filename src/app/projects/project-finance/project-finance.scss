@@ -1,0 +1,334 @@
+@use 'sass:map';
+@use '../../../custom-theme.scss' as theme;
+
+/* =========================
+   MOBILE FIRST
+========================= */
+
+header {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.container-article {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Headings – sizes */
+
+h1 {
+    font-size: 2.75rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* Lists – mobile */
+
+.container-article ul {
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Sections – spacing mobile */
+
+.section-request {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+}
+
+.section-insights,
+.section-action,
+.section-results,
+.section-impact {
+    padding: 3rem 1.5rem;
+}
+
+/* Testimonial – mobile overrides */
+
+.section-testimonial {
+    padding: 3rem 1.5rem;
+
+    h2 {
+        justify-content: flex-start;
+        padding-right: 0;
+    }
+
+    .testimonial-container {
+        padding-left: 0;
+        padding-bottom: 3rem;
+    }
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1 {
+    color: theme.color(tertiary, 70);
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: capitalize;
+}
+
+h2 {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: theme.color(primary, 10);
+    font-family: "Source Sans 3";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    max-width: 50rem;
+}
+
+.container-article {
+    padding-left: 1.5rem;
+}
+
+.container-article ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+}
+
+.container-article li {
+    gap: 10px;
+    align-items: center;
+}
+
+.articleLi {
+    color: theme.color(primary, 50);
+    font-family: "Source Sans 3";
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.4px;
+}
+
+article {
+    color: theme.color(primary, 10);
+    font-family: "Source Sans 3";
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.4px;
+}
+
+p {
+    color: theme.color(primary, 10);
+    font-family: "Source Sans 3";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+label {
+    color: theme.color(secondary, 10);
+    background-color: theme.color(tertiary, 70);
+    font-family: "Source Sans 3";
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.4px;
+    padding: 0.1rem 1rem;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.imageBabyBoom {
+    margin: 0;
+    padding: 0;
+    max-height: 67.5rem;
+}
+
+/* =========================
+   MEDIA QUERIES
+========================= */
+
+@media (width >=22.5rem) {
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    h2 {
+        font-size: 2.6rem;
+    }
+
+    p {
+        font-size: 1.15rem;
+    }
+
+    .section-request {
+        padding: 3.5rem 2rem;
+    }
+}
+
+@media (width >=48rem) {
+    header {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .container-article {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    .container-article ul {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .section-request {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 4rem 3rem;
+    }
+
+    .section-insights,
+    .section-action,
+    .section-results,
+    .section-impact {
+        padding: 5rem 3rem;
+    }
+
+    .section-testimonial {
+        .testimonial-container {
+            padding-left: 1.5rem;
+            padding-bottom: 2rem;
+        }
+
+        h2 {
+            justify-content: flex-end;
+            padding-right: 1.5rem;
+        }
+    }
+}
+
+/* =========================
+   IMÁGENES RESPONSIVE
+========================= */
+
+.section-image img,
+.imageRexAcademy img {
+    display: none;
+}
+
+.section-image img[src*="_480px"],
+.imageRexAcademy img[src*="_480px"] {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (width >=48rem) {
+    .section-image img[src*="_480px"],
+    .imageRexAcademy img[src*="_480px"] {
+        display: none;
+    }
+
+    .section-image img:not([src*="_480px"]),
+    .imageRexAcademy img:not([src*="_480px"]) {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (width >=90rem) {
+    h1,
+    h2,
+    h3,
+    ul,
+    li,
+    .articleLi,
+    .container-article {
+        padding-left: 6rem;
+    }
+
+    .section-image img,
+    .imageRexAcademy img {
+        max-width: 100%;
+    }
+
+    .section-request {
+        display: flex;
+        justify-content: space-between;
+        padding: 6rem 12rem;
+        background-color: theme.color(tertiary, 98);
+
+        .title-challenge {
+            max-width: 38rem;
+        }
+
+        .subTitle-challenge {
+            max-width: 38rem;
+        }
+    }
+}
+
+/* =========================
+   IMÁGENES RESPONSIVE
+========================= */
+
+.section-image img,
+.imageRexAcademy img {
+    display: none;
+}
+
+.section-image img[src*="_480px"],
+.imageRexAcademy img[src*="_480px"] {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (width >=48rem) {
+    .section-image img[src*="_480px"],
+    .imageRexAcademy img[src*="_480px"] {
+        display: none;
+    }
+
+    .section-image img:not([src*="_480px"]),
+    .imageRexAcademy img:not([src*="_480px"]) {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
