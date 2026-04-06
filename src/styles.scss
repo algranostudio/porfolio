@@ -18,6 +18,9 @@ html {
     ),
     density: 0,
   ));
+
+  // Keep anchor targets visible below the sticky navbar.
+  scroll-padding-top: 6rem;
 }
 
 html, body { height: 100%;}
