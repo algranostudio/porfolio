@@ -205,10 +205,12 @@ $fs-panel-description: clamp(1.2rem, 1vw + 0.5rem, 1.75rem);
 // -----------------------------------------------------
 
 .projects-container {
-  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   gap: 1.5rem;
-  padding: 2rem 6rem;
+  padding-bottom: 4rem;
 
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -448,6 +450,13 @@ $fs-panel-description: clamp(1.2rem, 1vw + 0.5rem, 1.75rem);
   background-color: theme.color(primary, 100);
   margin-inline: auto;
 
+  .stories-cta-button {
+    white-space: nowrap;
+    font-size: clamp(0.8rem, 0.72rem + 0.45vw, 1rem);
+    line-height: 120%;
+    padding: 0.45rem 1rem;
+  }
+
   .stories-container {
     display: flex;
     justify-content: space-between;
@@ -476,6 +485,13 @@ $fs-panel-description: clamp(1.2rem, 1vw + 0.5rem, 1.75rem);
 
     .story-card {
       max-width: 100%;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .stories-cta-button {
+      font-size: clamp(1rem, 0.92rem + 0.35vw, 1.25rem);
+      padding: 0.6rem 2rem;
     }
   }
 }
@@ -511,5 +527,9 @@ $fs-panel-description: clamp(1.2rem, 1vw + 0.5rem, 1.75rem);
       color: theme.color(primary, 10);
       line-height: 130%;
     }
+  }
+
+  .projectH2{
+    padding-left: 12rem;
   }
 }

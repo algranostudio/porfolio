@@ -15,6 +15,7 @@
     <div class="center-nav">
         <a href="#navbar">Inicio</a>
         <a href="#services">Servicios</a>
+        <a href="#projects">Proyectos</a>
         <a routerLink="/contact">Contacto</a>
         <div class="menu-style">
             <button matIconButton [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
@@ -31,12 +32,16 @@
                 </button>
                 <button mat-menu-item>
                     <img src="/images/logo/logo_14px.png" alt="Logo">
+                    <a href="#projects">Proyectos</a>
+                </button>
+                <button mat-menu-item>
+                    <img src="/images/logo/logo_14px.png" alt="Logo">
                     <a routerLink="/contact">Contacto</a>
                 </button>
             </mat-menu>
         </div>
     </div>
     <div class="right-nav">
-        <button routerLink="/contact" class="button-style-global button-primary">Consulta Gratuita</button>
+        <button routerLink="/contact" class="button-style-global button-primary">Agenda tu consulta</button>
     </div>
 </nav>

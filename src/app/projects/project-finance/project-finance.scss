@@ -15,20 +15,6 @@ header {
     padding-right: 1.5rem;
 }
 
-/* Headings – sizes */
-
-h1 {
-    font-size: 2.75rem;
-}
-
-h2 {
-    font-size: 2.25rem;
-}
-
-h3 {
-    font-size: 1.25rem;
-}
-
 /* Lists – mobile */
 
 .container-article ul {
@@ -70,10 +56,18 @@ h3 {
 /* =========================
    TYPOGRAPHY
 ========================= */
+:host {
+    --fs-h1: clamp(2.2rem, 1.4rem + 3.5vw, 4.5rem);
+    --fs-h2: clamp(1.8rem, 1.3rem + 2.2vw, 3rem);
+    --fs-h3: clamp(1.1rem, 0.95rem + 0.9vw, 1.75rem);
+    --fs-body-lg: clamp(1.1rem, 0.95rem + 0.7vw, 1.75rem);
+    --fs-body-md: clamp(1rem, 0.92rem + 0.35vw, 1.25rem);
+}
 
 h1 {
     color: theme.color(tertiary, 70);
     font-family: "IBM Plex Sans";
+    font-size: var(--fs-h1);
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
@@ -82,6 +76,7 @@ h1 {
 
 h2 {
     font-family: "IBM Plex Sans";
+    font-size: var(--fs-h2);
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
@@ -91,6 +86,7 @@ h2 {
 h3 {
     color: theme.color(primary, 10);
     font-family: "Source Sans 3";
+    font-size: var(--fs-h3);
     font-style: normal;
     font-weight: 700;
     line-height: 130%;
@@ -117,7 +113,7 @@ h3 {
 .articleLi {
     color: theme.color(primary, 50);
     font-family: "Source Sans 3";
-    font-size: 1.25rem;
+    font-size: var(--fs-body-md);
     font-style: italic;
     font-weight: 400;
     line-height: 130%;
@@ -127,7 +123,7 @@ h3 {
 article {
     color: theme.color(primary, 10);
     font-family: "Source Sans 3";
-    font-size: 1.25rem;
+    font-size: var(--fs-body-md);
     font-style: italic;
     font-weight: 400;
     line-height: 130%;
@@ -137,7 +133,7 @@ article {
 p {
     color: theme.color(primary, 10);
     font-family: "Source Sans 3";
-    font-size: 1.25rem;
+    font-size: var(--fs-body-md);
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
@@ -147,12 +143,209 @@ label {
     color: theme.color(secondary, 10);
     background-color: theme.color(tertiary, 70);
     font-family: "Source Sans 3";
-    font-size: 1.25rem;
+    font-size: var(--fs-body-md);
     font-style: italic;
     font-weight: 400;
     line-height: 130%;
     letter-spacing: 0.4px;
     padding: 0.1rem 1rem;
+}
+
+/* =========================
+   SECTION: INSIGHTS
+========================= */
+
+.section-insights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: theme.color(primary, 100);
+
+    .styleDivInsight {
+        width: 100;
+        max-width: 38rem;
+    }
+
+    .styleSubtitleArticle {
+        display: flex;
+        justify-content: stretch;
+        background-color: theme.color(tertiary, 70);
+        padding: 0.1rem 1rem;
+        width: 5rem;
+    }
+
+    p,
+    span {
+        width: 100%;
+        max-width: 38.25rem;
+        margin: 0;
+    }
+
+    .spanInsights {
+        color: theme.color(primary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-lg);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+    .subtitleInsight {
+        color: theme.color(primary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-md);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+        padding-top: 1rem;
+    }
+
+    mat-divider {
+        margin: 1rem 0rem;
+        border: 0.2px solid theme.color(tertiary, 70);
+    }
+}
+
+/* =========================
+   SECTION: ACTION
+========================= */
+
+.section-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .actionDiv {
+        width: 100%;
+        max-width: 38rem;
+    }
+
+    .style-action {
+        background-color: theme.color(tertiary, 70);
+        padding: 0.1rem 0.8rem;
+        width: 5rem;
+    }
+
+    ul,
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .actionUlStyle {
+        display: flex;
+        //justify-content: space-between;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .actionUlStyle img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+/* =========================
+   SECTION: TESTIMONIAL
+========================= */
+
+.section-testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: theme.color(primary, 100);
+    padding: 4rem 0.6rem;
+
+    .box {
+        width: 100%;
+        max-width: 56rem;
+        height: 100%;
+        max-height: 36rem;
+        background-color: theme.color(primary, 95);
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    p {
+        max-width: 46rem;
+        color: theme.color(primary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-lg);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        margin: 0;
+    }
+
+    .testimonial-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        max-width: 46rem;
+        padding: 1rem;
+    }
+
+    img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    .avatarText {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        padding-top: 1.6rem;
+        align-items: center;
+    }
+
+    .avatarSpan,
+    span {
+        color: theme.color(primary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-md);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+    }
+
+    .avatarP,
+    p {
+        color: theme.color(secondary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-md);
+        font-style: italic;
+        font-weight: normal;
+        line-height: 130%;
+    }
+}
+
+/* =========================
+   SECTION: IMPACT
+========================= */
+
+.section-impact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: theme.color(tertiary, 98);
+
+    p {
+        max-width: 38.25rem;
+        color: theme.color(primary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-lg);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        margin: 0;
+    }
 }
 
 /* =========================
@@ -170,18 +363,6 @@ label {
 ========================= */
 
 @media (width >=22.5rem) {
-    h1 {
-        font-size: 3.2rem;
-    }
-
-    h2 {
-        font-size: 2.6rem;
-    }
-
-    p {
-        font-size: 1.15rem;
-    }
-
     .section-request {
         padding: 3.5rem 2rem;
     }
@@ -196,18 +377,6 @@ label {
     .container-article {
         padding-left: 3rem;
         padding-right: 3rem;
-    }
-
-    h1 {
-        font-size: 4.5rem;
-    }
-
-    h2 {
-        font-size: 3rem;
-    }
-
-    h3 {
-        font-size: 1.75rem;
     }
 
     .container-article ul {
@@ -273,13 +442,12 @@ label {
 
 @media (width >=90rem) {
     h1,
-    h2,
     h3,
     ul,
     li,
     .articleLi,
     .container-article {
-        padding-left: 6rem;
+        padding-left: 9rem;
     }
 
     .section-image img,

@@ -1,0 +1,541 @@
+@use 'sass:map';
+@use '../../../custom-theme.scss' as theme;
+
+/* =========================
+   MOBILE FIRST
+========================= */
+
+header {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.container-article {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Lists – mobile */
+
+.container-article ul {
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Sections – spacing mobile */
+
+.section-request {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+}
+
+.section-insights,
+.section-action,
+.section-results,
+.section-impact {
+    padding: 3rem 1.5rem;
+}
+
+.section-testimonial {
+    padding: 3rem 1.5rem;
+
+    h2 {
+        justify-content: flex-start;
+        padding-right: 0;
+    }
+
+    .testimonial-container {
+        padding-left: 0;
+        padding-bottom: 3rem;
+    }
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+:host {
+    --fs-h1: clamp(2.2rem, 1.4rem + 3.5vw, 4.5rem);
+    --fs-h2: clamp(1.8rem, 1.3rem + 2.2vw, 3rem);
+    --fs-h3: clamp(1.1rem, 0.95rem + 0.9vw, 1.75rem);
+    --fs-body-lg: clamp(1.1rem, 0.95rem + 0.7vw, 1.75rem);
+    --fs-body-md: clamp(1rem, 0.92rem + 0.35vw, 1.25rem);
+}
+
+h1 {
+    color: theme.color(tertiary, 70);
+    font-family: "IBM Plex Sans";
+    font-size: var(--fs-h1);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: capitalize;
+}
+
+h2 {
+    font-family: "IBM Plex Sans";
+    font-size: var(--fs-h2);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: theme.color(primary, 10);
+    font-family: "Source Sans 3";
+    font-size: var(--fs-h3);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    max-width: 50rem;
+}
+
+.container-article {
+    padding-left: 1.5rem;
+}
+
+.container-article ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+}
+
+.container-article li {
+    gap: 10px;
+    align-items: center;
+}
+
+.articleLi {
+    color: theme.color(primary, 50);
+    font-family: "Source Sans 3";
+    font-size: var(--fs-body-md);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.4px;
+}
+
+article {
+    color: theme.color(primary, 10);
+    font-family: "Source Sans 3";
+    font-size: var(--fs-body-md);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.4px;
+}
+
+p {
+    color: theme.color(primary, 10);
+    font-family: "Source Sans 3";
+    font-size: var(--fs-body-md);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+label {
+    color: theme.color(secondary, 10);
+    background-color: theme.color(tertiary, 70);
+    font-family: "Source Sans 3";
+    font-size: var(--fs-body-md);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.4px;
+    padding: 0.1rem 1rem;
+}
+
+/* =========================
+   SECTION: INSIGHTS
+========================= */
+
+.section-insights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .styleDivInsight {
+        width: 100;
+        max-width: 38rem;
+    }
+
+    .styleSubtitleArticle {
+        display: flex;
+        justify-content: stretch;
+        background-color: theme.color(tertiary, 70);
+        padding: 0.1rem 1rem;
+        width: 5rem;
+    }
+
+    p,
+    span {
+        width: 100%;
+        max-width: 38.25rem;
+        margin: 0;
+    }
+
+    .spanInsights {
+        color: theme.color(primary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-lg);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+    .subtitleInsight {
+        color: theme.color(primary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-md);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+        padding-top: 1rem;
+    }
+
+    mat-divider {
+        margin: 1rem 0rem;
+        border: 0.2px solid theme.color(tertiary, 70);
+    }
+}
+
+/* =========================
+   SECTION: ACTION
+========================= */
+
+.section-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .actionDiv {
+        width: 100%;
+        max-width: 38rem;
+    }
+
+    .style-action {
+        background-color: theme.color(tertiary, 70);
+        padding: 0.1rem 0.8rem;
+        width: 5rem;
+    }
+
+    ul,
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .actionUlStyle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .actionUlStyle img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+/* =========================
+   SECTION: RESULTS
+========================= */
+
+.section-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .resultDiv {
+        max-width: 42rem;
+    }
+
+    ul,
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .actionUlStyle {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .actionUlStyle img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .resultStyle {
+        color: theme.color(primary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-lg);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+    }
+}
+
+/* =========================
+   SECTION: TESTIMONIAL
+========================= */
+
+.section-testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: theme.color(primary, 100);
+    padding: 4rem 0.6rem;
+
+    .box {
+        width: 100%;
+        max-width: 56rem;
+        height: 100%;
+        max-height: 36rem;
+        background-color: theme.color(primary, 95);
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    p {
+        max-width: 46rem;
+        color: theme.color(primary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-lg);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        margin: 0;
+    }
+
+    .testimonial-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        max-width: 46rem;
+        padding: 1rem;
+    }
+
+    img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    .avatarText {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        padding-top: 1.6rem;
+        align-items: center;
+    }
+
+    .avatarSpan,
+    span {
+        color: theme.color(primary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-md);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+    }
+
+    .avatarP,
+    p {
+        color: theme.color(secondary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-md);
+        font-style: italic;
+        font-weight: normal;
+        line-height: 130%;
+    }
+}
+
+/* =========================
+   SECTION: IMPACT
+========================= */
+
+.section-impact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: theme.color(tertiary, 98);
+
+    p {
+        max-width: 38.25rem;
+        color: theme.color(primary, 10);
+        font-family: "Source Sans 3";
+        font-size: var(--fs-body-lg);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        margin: 0;
+    }
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.imageBabyBoom {
+    margin: 0;
+    padding: 0;
+    max-height: 67.5rem;
+}
+
+/* =========================
+   MEDIA QUERIES
+========================= */
+
+@media (width >=22.5rem) {
+    .section-request {
+        padding: 3.5rem 2rem;
+    }
+}
+
+@media (width >=48rem) {
+    header {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .container-article {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .container-article ul {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .section-request {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 4rem 3rem;
+    }
+
+    .section-insights,
+    .section-action,
+    .section-results,
+    .section-impact {
+        padding: 5rem 3rem;
+    }
+
+    .section-testimonial {
+        .testimonial-container {
+            padding-left: 1.5rem;
+            padding-bottom: 2rem;
+        }
+
+        h2 {
+            justify-content: flex-end;
+            padding-right: 1.5rem;
+        }
+    }
+}
+
+/* =========================
+   IMÁGENES RESPONSIVE
+========================= */
+
+.section-image img,
+.imageBabyBoom img {
+    display: none;
+}
+
+.section-image img[src*="_480px"],
+.imageBabyBoom img[src*="_480px"] {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (width >=48rem) {
+    .section-image img[src*="_480px"],
+    .imageBabyBoom img[src*="_480px"] {
+        display: none;
+    }
+
+    .section-image img:not([src*="_480px"]),
+    .imageBabyBoom img:not([src*="_480px"]) {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (width >=90rem) {
+    h1,
+    h3,
+    ul,
+    li,
+    .articleLi,
+    .container-article {
+        padding-left: 9rem;
+    }
+
+    .section-image img,
+    .imageBabyBoom img {
+        max-width: 100%;
+    }
+
+    .section-request {
+        display: flex;
+        justify-content: space-between;
+        padding: 6rem 12rem;
+        background-color: theme.color(tertiary, 98);
+
+        .title-challenge {
+            max-width: 38rem;
+        }
+
+        .subTitle-challenge {
+            max-width: 38rem;
+        }
+    }
+}
+
+/* =========================
+   IMÁGENES RESPONSIVE
+========================= */
+
+.section-image img,
+.imageBabyBoom img {
+    display: none;
+}
+
+.section-image img[src*="_480px"],
+.imageBabyBoom img[src*="_480px"] {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (width >=48rem) {
+    .section-image img[src*="_480px"],
+    .imageBabyBoom img[src*="_480px"] {
+        display: none;
+    }
+
+    .section-image img:not([src*="_480px"]),
+    .imageBabyBoom img:not([src*="_480px"]) {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}

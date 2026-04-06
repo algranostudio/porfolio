@@ -53,6 +53,10 @@
 
         button {
             display: block;
+            white-space: nowrap;
+            font-size: clamp(0.8rem, 0.72rem + 0.45vw, 1rem);
+            line-height: 120%;
+            padding: 0.45rem 1rem;
         }
     }
 }
@@ -79,6 +83,11 @@
         .right-nav {
             position: static;
             transform: none;
+
+            button {
+                font-size: clamp(1rem, 0.92rem + 0.35vw, 1.25rem);
+                padding: 0.6rem 2rem;
+            }
         }
     }
 }

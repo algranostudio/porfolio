@@ -4,9 +4,18 @@
 /* =========================
    TYPOGRAPHY
 ========================= */
+:host {
+    --fs-h1: clamp(2.2rem, 1.4rem + 3.5vw, 4.5rem);
+    --fs-h2: clamp(1.8rem, 1.3rem + 2.2vw, 3rem);
+    --fs-h3: clamp(1.1rem, 0.95rem + 0.9vw, 1.75rem);
+    --fs-body-lg: clamp(1.1rem, 0.95rem + 0.7vw, 1.75rem);
+    --fs-body-md: clamp(1rem, 0.92rem + 0.35vw, 1.25rem);
+}
+
 h1 {
     color: theme.color(tertiary, 70);
     font-family: "IBM Plex Sans";
+    font-size: var(--fs-h1);
     font-style: normal;
     font-weight: 700;
     line-height: 100%; 
@@ -15,6 +24,7 @@ h1 {
 
 h2 {
     font-family: "IBM Plex Sans";
+    font-size: var(--fs-h2);
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
@@ -24,6 +34,7 @@ h2 {
 h3 {
     color: theme.color(primary, 10);
     font-family: "Source Sans 3";
+    font-size: var(--fs-h3);
     font-style: normal;
     font-weight: 700;
     line-height: 130%;
@@ -64,6 +75,18 @@ h3 {
     padding: 3rem 1.5rem;
 }
 
+label {
+    color: theme.color(secondary, 10);
+    background-color: theme.color(tertiary, 70);
+    font-family: "Source Sans 3";
+    font-size: var(--fs-body-md);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.4px;
+    padding: 0.1rem 1rem;
+}
+
 /* =========================
    SECTION: INSIGHTS
 ========================= */
@@ -98,7 +121,7 @@ h3 {
     .spanInsights {
         color: theme.color(primary, 10);
         font-family: "Source Sans 3";
-        font-size: 1.75rem;
+        font-size: var(--fs-body-lg);
         font-style: normal;
         font-weight: 400;
         line-height: 130%;
@@ -107,7 +130,7 @@ h3 {
     .subtitleInsight {
         color: theme.color(primary, 10);
         font-family: "Source Sans 3";
-        font-size: 20px;
+        font-size: var(--fs-body-md);
         font-style: normal;
         font-weight: 700;
         line-height: 130%;
@@ -196,7 +219,7 @@ h3 {
     .resultStyle {
         color: theme.color(primary, 10);
         font-family: "Source Sans 3";
-        font-size: 1.75rem;
+        font-size: var(--fs-body-lg);
         font-style: normal;
         font-weight: 400;
         line-height: 130%;
@@ -231,7 +254,7 @@ h3 {
         max-width: 46rem;
         color: theme.color(primary, 10);
         font-family: "Source Sans 3";
-        font-size: 1.75rem;
+        font-size: var(--fs-body-lg);
         font-style: normal;
         font-weight: 400;
         line-height: 130%;
@@ -264,7 +287,7 @@ h3 {
     span {
         color: theme.color(primary, 10);
         font-family: "Source Sans 3";
-        font-size: 20px;
+        font-size: var(--fs-body-md);
         font-style: normal;
         font-weight: 700;
         line-height: 130%;
@@ -274,7 +297,7 @@ h3 {
     p {
         color: theme.color(secondary, 10);
         font-family: "Source Sans 3";
-        font-size: 1.25rem;
+        font-size: var(--fs-body-md);
         font-style: italic;
         font-weight: normal;
         line-height: 130%;
@@ -295,7 +318,7 @@ h3 {
         max-width: 38.25rem;
         color: theme.color(primary, 10);
         font-family: "Source Sans 3";
-        font-size: 1.75rem;
+        font-size: var(--fs-body-lg);
         font-style: normal;
         font-weight: 400;
         line-height: 130%;
@@ -304,16 +327,10 @@ h3 {
 }
 
 @media (width >=22.5rem) {
-    h1 {
-        font-size: 3.2rem;
-    }
-
-    h2 {
-        font-size: 2.6rem;
-    }
-
-    h3 {
-        font-size: 1.25rem;
+    h1,
+    h3,
+    .container-article  {
+        padding-left: 1rem;
     }
 
     .section-request {
@@ -322,18 +339,6 @@ h3 {
 }
 
 @media (width >=48rem) {
-        h1 {
-        font-size: 4.5rem;
-    }
-
-    h2 {
-        font-size: 3rem;
-    }
-
-        h3 {
-        font-size: 1.75rem;
-    }
-
         .section-request {
         flex-direction: row;
         justify-content: space-between;
@@ -343,16 +348,15 @@ h3 {
 
 @media (width >=90rem) {
     h1,
-    h2,
     h3,
     .container-article  {
-        padding-left: 6rem;
+        padding-left: 12rem;
     }
 
         .section-request {
         display: flex;
         justify-content: space-between;
-        padding: 6rem 12rem;
+        padding: 6rem 18rem;
         background-color: theme.color(tertiary, 98);
 
         .title-challenge {
