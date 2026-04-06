@@ -26,74 +26,75 @@
                 </div>
             </section>
         </div>
-        <div id="projects" class="section-projects"><h2 class="projectH2">Proyectos</h2>
-        <div class="projects-slider">
-            <button class="arrow left" (click)="scroll('left')">
-                <mat-icon>chevron_left</mat-icon>
-            </button>
-            <button class="arrow right" (click)="scroll('right')">
-                <mat-icon>chevron_right</mat-icon>
-            </button>
-            <section class="projects-container" #scrollContainer (mousemove)="onMouseMove($event)"
-                (mouseenter)="showCursor()" (mouseleave)="hideCursor()">
-            <div class="project-education" routerLink="/project-education">
-                <div class="card-style">
-                    <div class="content-img-education">
-                        <label>Educación</label>
+        <div id="projects" class="section-projects">
+            <h2 class="projectH2">Proyectos</h2>
+            <div class="projects-slider">
+                <button class="arrow left" (click)="scroll('left')">
+                    <mat-icon>chevron_left</mat-icon>
+                </button>
+                <button class="arrow right" (click)="scroll('right')">
+                    <mat-icon>chevron_right</mat-icon>
+                </button>
+                <section class="projects-container" #scrollContainer (mousemove)="onMouseMove($event)"
+                    (mouseenter)="showCursor()" (mouseleave)="hideCursor()">
+                    <div class="project-education" routerLink="/project-education">
+                        <div class="card-style">
+                            <div class="content-img-education">
+                                <label>Educación</label>
+                            </div>
+                            <div class="content-text">
+                                <h3>UI/UX Design</h3>
+                                <span>Optimizando la experiencia de docentes y coordinadores</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="content-text">
-                        <h3>UI/UX Design</h3>
-                        <span>Optimizando la experiencia de docentes y coordinadores</span>
+                    <div class="project-finance" routerLink="/project-finance">
+                        <div class="card-style">
+                            <div class="content-img-finance">
+                                <label>Finanza</label>
+                            </div>
+                            <div class="content-text">
+                                <h3>UI/UX Design</h3>
+                                <span>Rediseño del sitio web de Nikko Asset Management</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="project-hospitality" routerLink="/project-hospitality">
+                        <div class="card-style">
+                            <div class="content-img-hospitality">
+                                <label>Hospitalidad</label>
+                            </div>
+                            <div class="content-text">
+                                <h3>UI/UX Design</h3>
+                                <span>Simplificar y mejorar la legibilidad del menú de impresión</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-ecommerce" routerLink="/project-ecommerce">
+                        <div class="card-style">
+                            <div class="content-img-ecommerce">
+                                <label>E-commerce</label>
+                            </div>
+                            <div class="content-text">
+                                <h3>UI/UX Design</h3>
+                                <span>Transformando la experiencia de compra, más clara, confiable y humana.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div class="project-finance" routerLink="/project-finance">
-                <div class="card-style">
-                    <div class="content-img-finance">
-                        <label>Finanza</label>
-                    </div>
-                    <div class="content-text">
-                        <h3>UI/UX Design</h3>
-                        <span>Rediseño del sitio web de Nikko Asset Management</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-hospitality" routerLink="/project-hospitality">
-                <div class="card-style">
-                    <div class="content-img-hospitality">
-                        <label>Hospitalidad</label>
-                    </div>
-                    <div class="content-text">
-                        <h3>UI/UX Design</h3>
-                        <span>Simplificar y mejorar la legibilidad del menú de impresión</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-ecommerce" routerLink="/project-ecommerce">
-                <div class="card-style">
-                    <div class="content-img-ecommerce">
-                        <label>E-commerce</label>
-                    </div>
-                    <div class="content-text">
-                        <h3>UI/UX Design</h3>
-                        <span>Transformando la experiencia de compra, más clara, confiable y humana.</span>
-                    </div>
-                </div>
-            </div>
-            </section>
-        </div>
         </div>
         <section id="services" class="section-services">
             <h2>Servicios</h2>
             <p class="paragraph-service">Transforma desafíos en crecimiento con soluciones enfocadas en UX que generan
                 un impacto real en tu negocio.</p>
-            <mat-accordion class="example-headers-align" multi>
-                <mat-expansion-panel hideToggle>
+            <mat-accordion class="example-headers-align">
+                <mat-expansion-panel hideToggle expanded #panelOne="matExpansionPanel">
                     <mat-expansion-panel-header>
                         <mat-panel-title> Diseño & Producto (UX/UI) </mat-panel-title>
-                        <mat-panel-description>
+                        <mat-panel-description class="panel-action">
                             Ver más
-                            <mat-icon>add_circle</mat-icon>
+                            <mat-icon>{{ panelOne.expanded ? 'remove_circle' : 'add_circle' }}</mat-icon>
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <div class="div-panel-description">
@@ -101,22 +102,22 @@
                         <div>
                             <p>Crea experiencias digitales que tus usuarios aman y que tu negocio necesita.</p>
                             <ul>
-                                <li>Investigación de Usuarios</li>
-                                <li>Diseño de Interacción & Prototipado</li>
-                                <li>Pruebas de Usabilidad</li>
-                                <li>Design System</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Investigación de Usuarios</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Diseño de Interacción & Prototipado</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Pruebas de Usabilidad</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Design System</li>
                             </ul>
                             <button routerLink="/contact" class="button-style-global button-secondary">Veamos tu
                                 caso</button>
                         </div>
                     </div>
                 </mat-expansion-panel>
-                <mat-expansion-panel hideToggle>
+                <mat-expansion-panel hideToggle #panelTwo="matExpansionPanel">
                     <mat-expansion-panel-header>
                         <mat-panel-title> Auditoría & Optimización </mat-panel-title>
-                        <mat-panel-description>
+                        <mat-panel-description class="panel-action">
                             Ver más
-                            <mat-icon>add_circle</mat-icon>
+                            <mat-icon>{{ panelTwo.expanded ? 'remove_circle' : 'add_circle' }}</mat-icon>
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <div class="div-panel-description">
@@ -125,21 +126,21 @@
                             <p>Identifica oportunidades ocultas y corrige puntos de fricción para obtener resultados
                                 rápidos.</p>
                             <ul>
-                                <li>Auditoría de Sitios Web y Aplicaciones</li>
-                                <li>Auditoría de Procesos Presenciales</li>
-                                <li>Auditoría de Accesibilidad</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Auditoría de Sitios Web y Aplicaciones</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Auditoría de Procesos Presenciales</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Auditoría de Accesibilidad</li>
                             </ul>
                             <button routerLink="/contact" class="button-style-global button-secondary">Veamos tu
                                 caso</button>
                         </div>
                     </div>
                 </mat-expansion-panel>
-                <mat-expansion-panel hideToggle>
+                <mat-expansion-panel hideToggle #panelThree="matExpansionPanel">
                     <mat-expansion-panel-header>
                         <mat-panel-title> Workshops </mat-panel-title>
-                        <mat-panel-description class="panel-description">
+                        <mat-panel-description class="panel-description panel-action">
                             Ver más
-                            <mat-icon>add_circle</mat-icon>
+                            <mat-icon>{{ panelThree.expanded ? 'remove_circle' : 'add_circle' }}</mat-icon>
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <div class="div-panel-description">
@@ -147,22 +148,22 @@
                         <div>
                             <p>Capacita a tu equipo con habilidades prácticas de UX y una mentalidad colaborativa.</p>
                             <ul>
-                                <li>Discovery Workshop (Taller de Descubrimiento)</li>
-                                <li>Ideation & Solution Workshop (Taller de Ideación y Soluciones)</li>
-                                <li>Heuristic Evaluation Workshop (Taller de Evaluación Heurística)</li>
-                                <li>Figma Prototyping Workshop (Taller de Prototipado en Figma)</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Discovery Workshop (Taller de Descubrimiento)</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Ideation & Solution Workshop (Taller de Ideación y Soluciones)</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Heuristic Evaluation Workshop (Taller de Evaluación Heurística)</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Figma Prototyping Workshop (Taller de Prototipado en Figma)</li>
                             </ul>
                             <button routerLink="/contact" class="button-style-global button-secondary">Veamos tu
                                 caso</button>
                         </div>
                     </div>
                 </mat-expansion-panel>
-                <mat-expansion-panel hideToggle>
+                <mat-expansion-panel hideToggle #panelFour="matExpansionPanel">
                     <mat-expansion-panel-header>
                         <mat-panel-title> Consultoría </mat-panel-title>
-                        <mat-panel-description>
+                        <mat-panel-description class="panel-action">
                             Ver más
-                            <mat-icon>add_circle</mat-icon>
+                            <mat-icon>{{ panelFour.expanded ? 'remove_circle' : 'add_circle' }}</mat-icon>
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <div class="div-panel-description">
@@ -170,9 +171,9 @@
                         <div>
                             <p>Recibe orientación estratégica y mentoría para escalar tus iniciativas de UX.</p>
                             <ul>
-                                <li>Estructuración de Áreas de UX</li>
-                                <li>Soporte Estratégico Continuo</li>
-                                <li>Desarrollo de Talento Interno</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Estructuración de Áreas de UX</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Soporte Estratégico Continuo</li>
+                                <li><img src="/images/logo/logo_14px.png" alt="Logo"> Desarrollo de Talento Interno</li>
                             </ul>
                             <button routerLink="/contact" class="button-style-global button-secondary">Veamos tu
                                 caso</button>
@@ -188,19 +189,50 @@
                     <p>Experiencias que demuestran cómo impulsamos su éxito</p>
                 </div>
                 <div class="story-card">
-                    <span>Buscar slide</span>
-                    <p>El nuevo panel se ve mucho mejor y es mucho más fácil encontrar lo que necesito. <br> Ahora puedo
-                        dedicar menos tiempo a tareas administrativas y más tiempo con las actividades de mis alumnos.
-                    </p>
+                    <div class="story-card-content">
+                        <div class="slider-controls">
+                               <button (click)="prevSlide()">←</button>
+                               <span>{{ currentSlide + 1 }} / {{ testimonials.length }}</span>
+                               <button (click)="nextSlide()">→</button>
+                        </div>
+                        <div class="slide">
+                            <div class="testimonial-container">
+                                <svg class="svg-opening" xmlns="http://www.w3.org/2000/svg" width="35" height="25"
+                                    viewBox="0 0 35 25" fill="none">
+                                    <path
+                                        d="M0 9.375C0 4.19531 4.19531 0 9.375 0H10C11.3828 0 12.5 1.11719 12.5 2.5C12.5 3.88281 11.3828 5 10 5H9.375C6.96094 5 5 6.96094 5 9.375V10H10C12.7578 10 15 12.2422 15 15V20C15 22.7578 12.7578 25 10 25H5C2.24219 25 0 22.7578 0 20V9.375ZM20 9.375C20 4.19531 24.1953 0 29.375 0H30C31.3828 0 32.5 1.11719 32.5 2.5C32.5 3.88281 31.3828 5 30 5H29.375C26.9609 5 25 6.96094 25 9.375V10H30C32.7578 10 35 12.2422 35 15V20C35 22.7578 32.7578 25 30 25H25C22.2422 25 20 22.7578 20 20V9.375Z"
+                                        fill="#00C1B2" />
+                                </svg>
+                                <p>{{ testimonials[currentSlide].text }}
+                                    <svg class="svg-closing" xmlns="http://www.w3.org/2000/svg" width="35" height="25"
+                                        viewBox="0 0 35 25" fill="none">
+                                        <path
+                                            d="M35 15.625C35 20.8047 30.8047 25 25.625 25H25C23.6172 25 22.5 23.8828 22.5 22.5C22.5 21.1172 23.6172 20 25 20H25.625C28.0391 20 30 18.0391 30 15.625V15H25C22.2422 15 20 12.7578 20 10V5C20 2.24219 22.2422 0 25 0H30C32.7578 0 35 2.24219 35 5V15.625ZM15 15.625C15 20.8047 10.8047 25 5.625 25H5C3.61719 25 2.5 23.8828 2.5 22.5C2.5 21.1172 3.61719 20 5 20H5.625C8.03906 20 10 18.0391 10 15.625V15H5C2.24219 15 0 12.7578 0 10V5C0 2.24219 2.24219 0 5 0H10C12.7578 0 15 2.24219 15 5V15.625Z"
+                                            fill="#00C1B2" />
+                                    </svg>
+                                </p>
+                                <div class="avatarText">
+                                    <img [src]="testimonials[currentSlide].avatar"
+                                        [alt]="testimonials[currentSlide].avatarAlt">
+                                    <div>
+                                        <span class="avatarSpan">{{ testimonials[currentSlide].role }}</span>
+                                        <p class="avatarP">{{ testimonials[currentSlide].company }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button routerLink="/contact" class="button-style-global stories-cta-button">Sé nuestro próximo caso de éxito</button>
+            <button routerLink="/contact" class="button-style-global stories-cta-button">Sé nuestro próximo caso de
+                éxito</button>
         </section>
         <section class="section-invitation">
             <div class="container-invitation">
                 <h2>¿Listo para transformar la experiencia de tus usuarios?</h2>
                 <p>Creamos experiencias de usuario atractivas que impulsan el crecimiento real de tu producto.</p>
-                <button routerLink="/contact" class="button-style-global">Agenda tu sesión</button>
+                <button routerLink="/contact" class="button-style-global invitation-cta-button">Agenda tu
+                    sesión</button>
             </div>
         </section>
     </main>
