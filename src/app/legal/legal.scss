@@ -1,13 +1,143 @@
+@use '../../custom-theme' as theme;
+
+* {
+    box-sizing: border-box;
+}
+
 .legal-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 0 12rem;
+    align-items: stretch;
+    padding: 2rem;
     margin: 0 auto;
     width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+
+    .legal {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        h2 {
+            display: block;
+            width: 100%;
+            min-width: 0;
+            margin: 0 0 2rem 0;
+            font-size: 1.75rem;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        div {
+            margin-bottom: 2rem;
+            width: 100%;
+            min-width: 0;
+
+            h3 {
+                font-size: 1.25rem;
+                margin: 0 0 1rem 0;
+                color: theme.color(secondary, 10);
+                word-break: break-word;
+                hyphens: auto;
+            }
+
+            p {
+                font-size: 0.875rem;
+                line-height: 1.6;
+                color: theme.color(primary, 10);
+                margin: 0 0 1rem 0;
+                word-break: break-word;
+                hyphens: auto;
+                min-width: 0;
+            }
+
+            span {
+                display: block;
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: theme.color(primary, 10);
+                margin: 1.5rem 0 1rem 0;
+                word-break: break-word;
+                hyphens: auto;
+                min-width: 0;
+            }
+
+            ul {
+                margin: 0 0 1rem 1.5rem;
+                padding: 0;
+                list-style: disc;
+
+                li {
+                    margin-bottom: 0.5rem;
+                    color: theme.color(primary, 10);
+                    font-size: 0.875rem;
+                    word-break: break-word;
+                    hyphens: auto;
+                }
+            }
+
+            mat-divider {
+                margin: 2rem 0;
+            }
+        }
+    }
 }
 
-h2 {
-    display: flex;
-    align-items: flex-start;
+/* Mobile - Less than 48rem (768px) - Base styles above */
+
+/* Tablet - From 48rem to 90rem (768px to 1440px) */
+@media (width >= 48rem) and (width < 90rem) {
+    .legal-section {
+        padding: 2rem;
+
+        .legal {
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            div {
+                h3 {
+                    font-size: 1.35rem;
+                }
+
+                p,
+                span {
+                    font-size: 0.95rem;
+                }
+
+                ul li {
+                    font-size: 0.95rem;
+                }
+            }
+        }
+    }
+}
+
+/* Desktop - 90rem and above (1440px+) */
+@media (width >= 90rem) {
+    .legal-section {
+        padding: 2rem 12rem;
+
+        .legal {
+            h2 {
+                font-size: 3.5rem;
+            }
+
+            div {
+                h3 {
+                    font-size: 1.5rem;
+                }
+
+                p,
+                span {
+                    font-size: 1rem;
+                }
+
+                ul li {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
 }
